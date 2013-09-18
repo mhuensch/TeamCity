@@ -14,4 +14,7 @@
 		<dependencies>
 		</dependencies>
 	</metadata>
+	<files>
+		<file src="..\.nuget\Nuget.exe" target="lib\net45" />
+	</files>
 </package>
