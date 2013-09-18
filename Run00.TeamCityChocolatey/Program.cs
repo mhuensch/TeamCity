@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NuGet;
+using System;
 using System.IO;
 using System.Linq;
 
@@ -15,6 +16,7 @@ namespace Run00.TeamCityChocolatey
 
 			foreach (var file in Directory.GetFiles(sourceDir, "Chocolatey.nuspec", SearchOption.AllDirectories))
 			{
+				Console.WriteLine("_____Creating Chocolatey Package_____");
 				Console.WriteLine("Running against chocolatey file: " + file);
 
 				var projectFile = Directory.GetFiles(Path.GetDirectoryName(file), "*.csproj").SingleOrDefault();
@@ -27,8 +29,18 @@ namespace Run00.TeamCityChocolatey
 				Console.WriteLine("Running packaging for: " + file + " using " + projectFile);
 				var options = string.Format("pack {0} -IncludeReferencedProjects -Prop Configuration=Release", projectFile);
 
+				var manifest = default(Manifest);
+				using (var stream = File.OpenRead(file))
+				{
+					manifest = Manifest.ReadFrom(stream, false);
+				}
+
+				Console.WriteLine("Current manifest id " + manifest.Metadata.Id);
+
+
+
 				Console.WriteLine("Using args: " + options);
-				NuGet.Program.Main(options.Split(' '));
+				//NuGet.Program.Main(options.Split(' '));
 			}
 		}
 	}
