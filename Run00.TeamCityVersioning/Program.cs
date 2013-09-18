@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Run00.TeamCityVersioning
 {
@@ -10,6 +6,7 @@ namespace Run00.TeamCityVersioning
 	{
 		static void Main(string[] args)
 		{
+			Console.WriteLine("Starting versioning process");
 		}
 	}
 }
