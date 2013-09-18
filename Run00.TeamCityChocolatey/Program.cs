@@ -10,7 +10,10 @@ namespace Run00.TeamCityChocolatey
 		{
 			Console.WriteLine("Starting chocolatey packaging process");
 
-			foreach (var file in Directory.GetFiles(Directory.GetCurrentDirectory(), "Chocolatey.nuspec"))
+			var sourceDir = args[0];
+			Console.WriteLine("Using source directory: " + sourceDir);
+
+			foreach (var file in Directory.GetFiles(sourceDir, "Chocolatey.nuspec"))
 			{
 				var projectFile = Directory.GetFiles(Path.GetDirectoryName(file), "*.csproj").SingleOrDefault();
 				if (projectFile == null)
