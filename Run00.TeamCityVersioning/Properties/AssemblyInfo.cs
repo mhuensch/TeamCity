@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("TeamCityVersioning")]
 [assembly: AssemblyDescription("Program used by TeamCity to version Run00 projects")]
 [assembly: AssemblyCopyright("Copyright © 2013")]
-[assembly: AssemblyVersion("0.0.0.2")]
-[assembly: AssemblyFileVersion("0.0.0.2")]
+[assembly: AssemblyVersion("0.0.0.4")]
+[assembly: AssemblyFileVersion("0.0.0.4")]
