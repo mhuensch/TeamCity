@@ -25,9 +25,9 @@ namespace Run00.TeamCityChocolatey
 				}
 
 				Console.WriteLine("Running packaging for: " + file + " using " + projectFile);
-				var options = string.Format("pack {0} -IncludeReferencedProjects -Prop Configuration=Debug", projectFile);
+				var options = string.Format("pack {0} -IncludeReferencedProjects -Prop Configuration=Release", projectFile);
 
-				Console.WriteLine("Using args: " + args);
+				Console.WriteLine("Using args: " + options);
 				NuGet.Program.Main(options.Split(' '));
 			}
 		}
