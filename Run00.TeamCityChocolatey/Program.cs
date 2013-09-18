@@ -13,7 +13,7 @@ namespace Run00.TeamCityChocolatey
 			var sourceDir = args[0];
 			Console.WriteLine("Using source directory: " + sourceDir);
 
-			foreach (var file in Directory.GetFiles(sourceDir, "Chocolatey.nuspec"))
+			foreach (var file in Directory.GetFiles(sourceDir, "Chocolatey.nuspec", SearchOption.AllDirectories))
 			{
 				var projectFile = Directory.GetFiles(Path.GetDirectoryName(file), "*.csproj").SingleOrDefault();
 				if (projectFile == null)

@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("TeamCityChocolatey")]
 [assembly: AssemblyDescription("Program used by TeamCity to package and push Run00 projects to Chocolatey")]
 [assembly: AssemblyCopyright("Copyright © 2013")]
-[assembly: AssemblyVersion("0.0.0.3")]
-[assembly: AssemblyFileVersion("0.0.0.3")]
+[assembly: AssemblyVersion("0.0.0.4")]
+[assembly: AssemblyFileVersion("0.0.0.4")]
