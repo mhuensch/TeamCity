@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<metadata>
+		<id>$id$</id>
+		<title>$id$</title>
+		<version>$version$</version>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<description>$description$</description>
+		<projectUrl>https://github.com/$author$/TeamCity/wiki</projectUrl>
+		<iconUrl>https://github.com/$author$/TeamCity/blob/master/ICON.png</iconUrl>
+		<licenseUrl>https://github.com/$author$/TeamCity/blob/master/LICENSE</licenseUrl>
+		<tags></tags>
+		<dependencies>
+		</dependencies>
+	</metadata>
+</package>
