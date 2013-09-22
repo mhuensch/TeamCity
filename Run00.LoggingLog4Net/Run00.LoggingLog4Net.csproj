@@ -4,18 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E4F75843-2927-4577-B78A-45D07DFC665A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{79B381A5-805C-445A-A05D-58A0C64387C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Run00.TeamCityVersioning</RootNamespace>
-    <AssemblyName>Run00.TeamCityVersioning</AssemblyName>
+    <RootNamespace>Run00.LoggingLog4Net</RootNamespace>
+    <AssemblyName>Run00.LoggingLog4Net</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,11 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core">
-      <HintPath>..\packages\Castle.Core.3.2.0\lib\net45\Castle.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.Windsor">
-      <HintPath>..\packages\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,15 +44,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ComponentRegistration.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Run00.Application\Run00.Application.csproj">
+      <Project>{24f06604-f851-4972-b5b4-875c292e103a}</Project>
+      <Name>Run00.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Run00.ComponentRegistration\Run00.ComponentRegistration.csproj">
+      <Project>{a49316bc-6ffe-4d17-bc73-21d75c0e69a4}</Project>
+      <Name>Run00.ComponentRegistration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Run00.Logging\Run00.Logging.csproj">
+      <Project>{eb974a99-4095-40a3-8a11-c4ab2f44b680}</Project>
+      <Name>Run00.Logging</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Chocolatey.nuspec" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

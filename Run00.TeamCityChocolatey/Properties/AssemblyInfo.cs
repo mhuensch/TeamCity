@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 [assembly: AssemblyCompany("Run00")]
 [assembly: AssemblyProduct("TeamCity")]
-[assembly: AssemblyTitle("TeamCityChocolatey")]
+[assembly: AssemblyTitle("Chocolatey")]
 [assembly: AssemblyDescription("Program used by TeamCity to package and push Run00 projects to Chocolatey")]
 [assembly: AssemblyCopyright("Copyright © 2013")]
 [assembly: AssemblyVersion("0.0.0.12")]
